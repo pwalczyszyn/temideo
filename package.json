@@ -1,0 +1,25 @@
+{
+  "name": "temideo",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Piotr Walczyszyn",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "jspm": {
+    "directories": {
+      "packages": "src/public/scripts/jspm_packages"
+    },
+    "configFile": "src/public/scripts/config.js",
+    "dependencies": {
+      "parse": "npm:parse@^1.5.0",
+      "parse-react": "npm:parse-react@^0.4.2",
+      "react": "npm:react@0.13.3"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.1.13",
+      "babel-runtime": "npm:babel-runtime@^5.1.13",
+      "core-js": "npm:core-js@^0.9.4"
+    }
+  }
+}
