@@ -6,9 +6,9 @@ var imagemin = require('gulp-imagemin');
 
 gulp.task('images', function() {
   var debug = process.env.NODE_ENV !== 'production';
-  var dest = debug ? 'build/development/img' : 'build/production/img';
+  var dest = `build/${debug ? 'development' : 'production'}/img`;
 
-  return gulp.src('src/img/**')
+  return gulp.src('src/public/img/**')
     .pipe(changed(dest)) // Ignore unchanged files
     .pipe(imagemin()) // Optimize
     .pipe(gulp.dest(dest));

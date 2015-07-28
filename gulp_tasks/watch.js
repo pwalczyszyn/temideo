@@ -8,10 +8,10 @@ gulp.task('watch', function() {
 
 	gulp.watch('src/cloud/**', ['cloud']);
 	gulp.watch('src/public/**/*.html', ['html']);
+	gulp.watch('src/public/scss/**/*.scss', ['styles']);
 	gulp.watch('src/public/scripts/**/*.js', ['scripts']);
 
 	// gulp.watch('src/public/img/**', ['images']);
-	// gulp.watch('src/public/scss/**/*.scss', ['styles']);
 
 	// Watch .js files
 	// global.scripts('home.js', true);

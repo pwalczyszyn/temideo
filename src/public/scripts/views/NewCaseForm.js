@@ -8,7 +8,7 @@ var NewCaseForm = React.createClass({
 
   mixins: [React.addons.LinkedStateMixin],
 
-  getInitialState: function() {
+  getInitialState() {
     return {
       fullName: undefined,
       description: undefined,
@@ -17,12 +17,12 @@ var NewCaseForm = React.createClass({
     };
   },
 
-  onSubmitClick: function() {
+  onSubmitClick() {
     var creator = ParseReact.Mutation.Create('Case', this.state);
     creator.dispatch();
   },
 
-  render: function() {
+  render() {
     return (<form className="pure-form pure-form-stacked">
         <fieldset>
           <legend>Twoja sprawa</legend>

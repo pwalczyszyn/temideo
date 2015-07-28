@@ -25,9 +25,9 @@ gulp.task('fonts', function() {
 
 gulp.task('styles', ['fonts'], function() {
   var debug = process.env.NODE_ENV !== 'production';
-  var dest = debug ? 'build/development/css' : 'build/production/css';
+  var dest = `build/${debug ? 'development' : 'production'}/public/css`;
 
-  return gulp.src('src/scss/*.scss')
+  return gulp.src('src/public/scss/*.scss')
     .pipe(gulpif(debug, sourcemaps.init()))
     .pipe(sass({
       // includePaths: ['./bower_components/open-sans-fontface']
