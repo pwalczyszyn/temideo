@@ -18,8 +18,17 @@ var NewCaseForm = React.createClass({
   },
 
   onSubmitClick() {
-    var creator = ParseReact.Mutation.Create('Case', this.state);
-    creator.dispatch();
+    // var creator = ParseReact.Mutation.Create('Case', this.state);
+    // creator.dispatch();
+
+    Parse.Cloud.run('submitCase', this.state, {
+      success: function(result) {
+        console.log('result', result);
+      },
+      error: function(error) {
+        console.log('error', error);
+      }
+    });
   },
 
   render() {
@@ -35,7 +44,7 @@ var NewCaseForm = React.createClass({
                  className="pure-input-1-2"
                  placeholder="Jan Kowalski"
                  valueLink={this.linkState('fullName')}></input>
-          <label htmlFor="email">Imię i Nazwisko</label>
+          <label htmlFor="email">Email</label>
           <input id="email"
                  type="email"
                  className="pure-input-1-2"
